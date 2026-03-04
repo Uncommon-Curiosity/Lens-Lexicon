@@ -17,10 +17,10 @@ And now here we are.
 
 Using AI (qwen3-coder-next and qwen3.5-35b-a3b and running them locally in LM Studio), we now have a Python script that tags photos (.jpg, png, and .heic) with descriptive keywords that make it easier to search and find.
 
-### Before & After: Categorical vs. Descriptive
-| Original PhotoPrism Keywords | Lens & Lexicon Keywords |
-| :--- | :--- |
-| `asheville`, `blue`, `buncombe-county`, `house`, `line`, `north-carolina`... | **`cow, standing, fenced, area`** |
+### Before & After: Categorical Keywords vs. Descriptive Observations
+![Cow Example 1](https://github.com/Uncommon-Curiosity/Lens-Lexicon/blob/cc0990912f9bb4fcf6e3f5a78c3e742ce69254d6/Cow%201%20with%20before%20and%20after%20keywords.jpg)
+
+![Cow Example 2](https://github.com/Uncommon-Curiosity/Lens-Lexicon/blob/cc0990912f9bb4fcf6e3f5a78c3e742ce69254d6/Cow%202%20with%20before%20and%20after%20keywords.jpg)
 
 ***
 
@@ -28,11 +28,6 @@ Using AI (qwen3-coder-next and qwen3.5-35b-a3b and running them locally in LM St
 **Automatically tag thousands of photos (including HEIC) with AI.**
 
 The guide below takes your through installing and running the Python script.
-
-Setup takes about 15 minutes.
-
-Running it after that takes ~1 minute.
-
 
 > **Setup takes about 15 minutes. Running it after that takes ~1 minute.**
 > *No coding experience needed.*
