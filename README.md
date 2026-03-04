@@ -1,6 +1,6 @@
 # Lens & Lexicon
 A Python script that takes your photos from being just images to searchable memories by automatically generating and applying descriptive keywords to the metadata
-
+---
 It all started with cows.
 
 I was sketching out a new painting and needed cow images to use as a reference. I’ve taken a million photos of cows, I just needed to find them.
@@ -15,6 +15,7 @@ This is some bullsh*t, I said. There’s got to be a way to get better tags on m
 
 And now here we are.
 
+---
 Using AI (qwen3-coder-next and qwen3.5-35b-a3b and running them locally in LM Studio), we now have a Python script that tags photos (.jpg, png, and .heic) with descriptive keywords that make it easier to search and find.
 
 ### Before & After: Categorical Keywords vs. Descriptive Observations
@@ -217,11 +218,23 @@ python batch_tagger_universal_final_2026_03_02.py ~/Desktop/"test photos"
 *   You should see words like: `beach`, `child`, `sunset`.
 
 #### ⚠️ DDTC (Double Double Triple Check)
-Never trust the first test.
-1.  Run the script again with the same files. Do keywords match?
-2.  Replace files and run again.
-3.  Add a few more files, run again.
-4.  **Delete** the `test photos/` folder when done.
+![DDTC](https://github.com/Uncommon-Curiosity/Lens-Lexicon/blob/e64929a74291b95a847da245fb1b615319b75d70/DDTC_logo.png)
+
+Time to double double triple check (DDTC) before you send this off on the rest of your photos.
+
+**Why DDTC?**
+
+The first test doesn't count; never trust the first test.
+
+> 🧠 Remember, using the up arrow brings back the last command you used in Terminal.
+
+Double check 1: Replace the photos in the test folder and run the script again. Check and make sure the keywords match what you would expect.
+
+Double check 2: Replace the photos in the test folder again and run the script. Check and make sure the keywords match what you would expect.
+
+Triple check: Replace the photos in the test folder again (maybe add a few more) and run the script. Check and make sure the keywords match what you would expect.
+
+**Delete** the `test photos/` folder when done.
 
 ---
 
@@ -302,10 +315,14 @@ python batch_tagger_universal_final_2026_03_02.py "/your/new/photo/folder"
     *   `exif_keywords_date_time.csv`: The keywords applied to the photos.
 
 ### ⭐️ Why Requirements Matter (The "Cow" Discovery)
-Initially, the script looked for keywords with **4 letters or more**.
-*   **Problem:** You miss words like **"cow"** and **"bee"**.
-*   **Solution:** I fixed the script to use **3 letters or more**.
-*   **Result:** Magic! "Cow" came in. It's a glorious thing.
+
+The full process in a nutshell and why knowing your requirements is important
+
+Blip tagger script (called from batch tagger) looks at the photo, figures out what’s in the photo, and writes a descriptive sentence about it. In the blip_tags.csv, it drops in that sentence and then writes keywords.
+
+The script takes that and strips out all the stop words and looks for just nouns and verbs and adjectives to use as keywords. That goes into exif_keywords_.csv.
+
+Now, here’s the important bit that I discovered and why requirements are a must have. Initially, the script was looking keywords with four letters or more. Do you know what’s wrong with having keywords of 4 letters or more? Yeah, you miss cow. I fixed the script to use 3 or more letters and magically cow came in, bee came in. It’s a glorious thing.
 
 > This is why iterating and figuring out your requirements is important before starting.
 
@@ -313,7 +330,6 @@ Initially, the script looked for keywords with **4 letters or more**.
 
 ## 🎁 Final Notes & Community
 
-✅ You've given your photo library superpowers: search by concepts like "mountain," "snow," or "wedding" for iPhone HEIC photos without manual tagging.
 ✅ Everything stays local on your Mac. No uploads, no tracking.
 
 ### Need Help?
@@ -325,6 +341,6 @@ If something breaks, don't panic!
     *   Your Mac model & macOS version.
 
 > **Does it feel like it'd be more fun to learn these skills as part of a group?**
-> If so, reach out or drop a comment below! No experience required—just curiosity and good energy.
+> I think so too. If you’re interested in getting together with others to start from nothing, figure things out, and build something real, reach out or drop a comment. No experience required—just curiosity and good energy.
 
 **Happy tagging!** — Joy 🙌
